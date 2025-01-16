@@ -1,5 +1,6 @@
 import 'package:all_authentication/Components/my_container.dart';
 import 'package:all_authentication/Components/my_text_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -10,6 +11,11 @@ class SignInPage extends StatelessWidget {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+
+  void signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text, password: passController.text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +46,7 @@ class SignInPage extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          MyContainer(text: 'Sign In', onTap: () {})
+          MyContainer(text: 'Sign In', onTap: signIn)
         ],
       ),
     );

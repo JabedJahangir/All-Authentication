@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class MyContainer extends StatelessWidget {
-  MyContainer({super.key, required this.text, required this.onTap});
+  const MyContainer({super.key, required this.text, required this.onTap});
   final String text;
-  Function()? onTap;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {

@@ -1,15 +1,22 @@
 import 'package:all_authentication/Components/my_container.dart';
 import 'package:all_authentication/Components/my_text_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class SignUpPage extends StatelessWidget {
-   SignUpPage({
+  SignUpPage({
     super.key,
   });
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+
+  void signUp() async {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailController.text, password: passController.text);
+        
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +31,24 @@ class SignUpPage extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          MyTextField(controller: emailController, hintText: 'Email Adress',obscureText: false,),
+          MyTextField(
+            controller: emailController,
+            hintText: 'Email Adress',
+            obscureText: false,
+          ),
           const SizedBox(
             height: 10,
           ),
-          MyTextField(controller: passController, hintText: 'Password',obscureText: true,),
+          MyTextField(
+            controller: passController,
+            hintText: 'Password',
+            obscureText: true,
+          ),
           const SizedBox(
             height: 15,
           ),
-          MyContainer(text: 'Sign Up', onTap: () {})
+          MyContainer(
+              text: 'Sign Up',onTap: signUp,)
         ],
       ),
     );
