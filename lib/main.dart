@@ -1,4 +1,5 @@
-import 'package:all_authentication/Pages/auth_page.dart';
+
+import 'package:all_authentication/Pages/check_page.dart';
 import 'package:all_authentication/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Colors.grey[300]),
-      home: AuthPage(),
+      home: CheckPage(),
     );
   }
 }

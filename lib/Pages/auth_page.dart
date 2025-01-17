@@ -1,7 +1,6 @@
 import 'package:all_authentication/Components/my_container.dart';
 import 'package:all_authentication/Pages/anonymous_sign_in_page.dart';
 import 'package:all_authentication/Pages/facebook_sign_in_page.dart';
-import 'package:all_authentication/Pages/google_sign_in_page.dart';
 import 'package:all_authentication/Pages/phone_sign_in_page.dart';
 import 'package:all_authentication/Pages/sign_in_page.dart';
 import 'package:all_authentication/pages/sign_up_page.dart';
@@ -51,11 +50,7 @@ class AuthPage extends StatelessWidget {
               height: 20,
             ),
             MyContainer(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return GoogleSignInPage();
-                }));
-              },
+              onTap: () {},
               text: 'Google Sign In',
             ),
             const SizedBox(
